@@ -97,12 +97,16 @@ It is **not intended to replace vendor libraries such as Intel MKL**, but to pro
 * SLEEF
 * memkind
 * jemalloc
+* hwloc
 * pthread, dl, m
 * EVE / VectorClass / Highway
 * LLVM 20.x (Polly/MLIR optional)
 
 Minimum ISA: **AVX2**
 
+```bash
+
+```
 ### **Project Libraries:**
 
 Project dependent libraries which are the submodules of project and are a necessity when working it by **native integration** of **FFM API**. You can recompile
@@ -134,7 +138,7 @@ advanced/neural_layer/include/neural_primitives.h
 Initialize:
 
 ```cpp
-npl_init(nullptr);
+npl_init(nullptr); # or pass the default config by getting default config first.
 ```
 
 Example usage:
@@ -147,7 +151,17 @@ project_test/neural_layer_test.cpp
 
 ## Status
 
-This repository represents a **stable, feature-complete native backend**.
-Future work may include language bindings (Java FFM) and additional ISA targets.
+This repository represents a **stable, feature-complete native backend**. Future work may include language bindings (Java FFM) and additional ISA targets. 
 
----
+Currently the project is tested on following architectures:
+
+### Intel Architecture:
+
+* Intel core i5 1235u processor
+* OS - Ubuntu 24.04 LTS
+
+### AMD Architecture:
+
+* AMD ryzen 5 7430U processor
+* OS - Windows 11, tested using WSL
+--- 
